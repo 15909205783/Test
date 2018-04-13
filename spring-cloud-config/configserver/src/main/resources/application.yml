@@ -1,12 +1,17 @@
 spring:
+  profiles:
+      active: native
   cloud:
     config:
       server:
         native:
           search-locations: classpath:/shared
-  profiles:
-    active: native
+
   application:
     name: config-server
 server:
   port: 8769
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
